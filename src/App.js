@@ -56,7 +56,7 @@ export default function App() {
       body: JSON.stringify({ inkEffects, paperEffects, postEffects })
     };
     fetch(
-	"134.122.25.0:8000/crappify",
+	"localhost:8000/crappify",
 	requestOptions
     ).then((response) => response.json());
   };
