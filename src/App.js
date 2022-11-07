@@ -3,22 +3,39 @@ import { useState } from "react";
 import "./styles.css";
 
 const availableInkEffects = {
-  inkBleed: "Ink Bleed",
-  dustyInk: "Dusty Ink",
-  lowInkBlobs: "Low Ink Blobs",
-  lowInkLines: "Low Ink Lines",
-  blur: "Blur"
+    inkBleed: "Ink Bleed",
+    dustyInk: "Dusty Ink",
+    lowInkBlobs: "Low Ink Blobs",
+    lowInkPeriodicLines: "Low Ink Periodic Lines",
+    lowInkRandomLines: "Low Ink Random Lines",
+    bleedthrough: "Bleedthrough",
+    brightness: "Brightness",
+    dirtyDrum: "Dirty Drum",
+    dirtyRollers: "Dirty Rollers",
+    letterPress: "Letterpress"
 };
 
 const availablePaperEffects = {
-  cropAndTile: "Crop and Tile",
-  noiseTexturize: "Noise Texturize",
-  brightnessTexturize: "Brightness Texturize",
-  blur: "Blur"
+    cropAndTile: "Crop and Tile",
+    noiseTexturize: "Noise Texturize",
+    brightnessTexturize: "Brightness Texturize",
+    blur: "Blur",
+    noiseTexturize: "Noise Texturize",
+    subtleNoise: "Subtle Noise",
+    watermark: "Watermark"
 };
 
 const availablePostEffects = {
-  lightingGradient: "Lighting Gradient"
+    lightingGradient: "Lighting Gradient",
+    badPhotoCopy: "Bad Photocopy",
+    bindingsAndFasteners: "Bindings and Fasteners",
+    bookbinding: "Bookbinding",
+    dithering: "Dithering",
+    faxify: "Faxify",
+    folding: "Folding",
+    jpeg: "JPEG",
+    pencilScribbles: "Pencil Scribbles",
+    markup: "Markup"
 };
 
 export default function App() {
