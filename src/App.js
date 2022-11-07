@@ -59,7 +59,7 @@ export default function App() {
     };
 
     fetch(
-	"localhost:8000/crappify",
+	"http://localhost:8000/crappify",
 	requestOptions
     ).then((response) => response.json());
   };
