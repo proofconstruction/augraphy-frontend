@@ -49,12 +49,15 @@ export default function App() {
 
   const clearEffects = (type) => () => state[type].set([]);
 
-  const onSubmit = () => {
+  const onSubmit = (e) => {
+    e.preventDefault();
+
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ inkEffects, paperEffects, postEffects })
     };
+
     fetch(
 	"localhost:8000/crappify",
 	requestOptions
