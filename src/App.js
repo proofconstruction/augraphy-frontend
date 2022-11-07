@@ -56,8 +56,8 @@ export default function App() {
       body: JSON.stringify({ inkEffects, paperEffects, postEffects })
     };
     fetch(
-      "augraphy-web-production.up.railway.app:8000/crappify",
-      requestOptions
+	"134.122.25.0:8000/crappify",
+	requestOptions
     ).then((response) => response.json());
   };
 
