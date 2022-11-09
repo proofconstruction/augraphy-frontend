@@ -3,39 +3,39 @@ import { useState } from "react";
 import "./styles.css";
 
 const availableInkEffects = {
-    inkBleed: "Ink Bleed",
-    dustyInk: "Dusty Ink",
-    lowInkBlobs: "Low Ink Blobs",
-    lowInkPeriodicLines: "Low Ink Periodic Lines",
-    lowInkRandomLines: "Low Ink Random Lines",
-    bleedthrough: "Bleedthrough",
-    brightness: "Brightness",
-    dirtyDrum: "Dirty Drum",
-    dirtyRollers: "Dirty Rollers",
-    letterPress: "Letterpress"
+  inkBleed: "Ink Bleed",
+  dustyInk: "Dusty Ink",
+  lowInkBlobs: "Low Ink Blobs",
+  lowInkPeriodicLines: "Low Ink Periodic Lines",
+  lowInkRandomLines: "Low Ink Random Lines",
+  bleedthrough: "Bleedthrough",
+  brightness: "Brightness",
+  dirtyDrum: "Dirty Drum",
+  dirtyRollers: "Dirty Rollers",
+  letterPress: "Letterpress",
 };
 
 const availablePaperEffects = {
-    cropAndTile: "Crop and Tile",
-    noiseTexturize: "Noise Texturize",
-    brightnessTexturize: "Brightness Texturize",
-    blur: "Blur",
-    noiseTexturize: "Noise Texturize",
-    subtleNoise: "Subtle Noise",
-    watermark: "Watermark"
+  cropAndTile: "Crop and Tile",
+  noiseTexturize: "Noise Texturize",
+  brightnessTexturize: "Brightness Texturize",
+  blur: "Blur",
+  noiseTexturize: "Noise Texturize",
+  subtleNoise: "Subtle Noise",
+  watermark: "Watermark",
 };
 
 const availablePostEffects = {
-    lightingGradient: "Lighting Gradient",
-    badPhotoCopy: "Bad Photocopy",
-    bindingsAndFasteners: "Bindings and Fasteners",
-    bookbinding: "Bookbinding",
-    dithering: "Dithering",
-    faxify: "Faxify",
-    folding: "Folding",
-    jpeg: "JPEG",
-    pencilScribbles: "Pencil Scribbles",
-    markup: "Markup"
+  lightingGradient: "Lighting Gradient",
+  badPhotoCopy: "Bad Photocopy",
+  bindingsAndFasteners: "Bindings and Fasteners",
+  bookbinding: "Bookbinding",
+  dithering: "Dithering",
+  faxify: "Faxify",
+  folding: "Folding",
+  jpeg: "JPEG",
+  pencilScribbles: "Pencil Scribbles",
+  markup: "Markup",
 };
 
 export default function App() {
@@ -46,23 +46,25 @@ export default function App() {
   const state = {
     ink: {
       data: inkEffects,
-      set: setInkEffects
+      set: setInkEffects,
     },
     paper: {
       data: paperEffects,
-      set: setPaperEffects
+      set: setPaperEffects,
     },
     post: {
       data: postEffects,
-      set: setPostEffects
-    }
+      set: setPostEffects,
+    },
   };
 
-  const addEffect = (type) => ({ target: { value } }) => {
-    const effect = state[type];
+  const addEffect =
+    (type) =>
+    ({ target: { value } }) => {
+      const effect = state[type];
 
-    effect.set([...effect.data, value]);
-  };
+      effect.set([...effect.data, value]);
+    };
 
   const clearEffects = (type) => () => state[type].set([]);
 
@@ -72,13 +74,12 @@ export default function App() {
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ inkEffects, paperEffects, postEffects })
+      body: JSON.stringify({ inkEffects, paperEffects, postEffects }),
     };
 
-    fetch(
-	"http://localhost:8000/crappify",
-	requestOptions
-    ).then((response) => response.json());
+    fetch("http://localhost:8000/crappify", requestOptions).then((response) =>
+      response.json()
+    );
   };
 
   return (
